@@ -24,7 +24,7 @@ public class GoogleCalculatorTest extends BaseTest {
     }
 
     @Test
-    public void googleCalculatorAddTest() {
+    public void googleCalculatorTest() {
         googleCalculator.googleReq(onePlusThreeIs);
         Assert.assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
