@@ -27,7 +27,6 @@ public class GoogleWeatherTest extends BaseTest {
     @Test
     public void googleWeatherTest() {
         googleWeather.googleReq(weather);
-        assertEquals("Москва", googleWeather.weatherCity());
         googleWeather.googleReq(weatherInStPetersburg);
         assertEquals("Санкт-Петербург", googleWeather.weatherCity());
     }
