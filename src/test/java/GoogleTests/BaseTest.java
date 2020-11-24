@@ -1,9 +1,8 @@
 package GoogleTests;
 
-import Pages.GoogleCalculator;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,7 +12,7 @@ public class BaseTest {
 
     protected static WebDriver driver;
 
-    @BeforeClass
+    @BeforeAll
     public static void beforeClass() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -23,7 +22,7 @@ public class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
     }
 
-    @AfterClass
+    @AfterAll
     public static void AfterClass() {
         driver.quit();
     }

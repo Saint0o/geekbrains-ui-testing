@@ -1,7 +1,11 @@
 package GoogleTests;
 
 import Pages.GoogleCalculator;
-import org.junit.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GoogleCalculatorTest extends BaseTest {
 
@@ -13,12 +17,12 @@ public class GoogleCalculatorTest extends BaseTest {
 
     private static GoogleCalculator googleCalculator;
 
-    @BeforeClass
+    @BeforeAll
     public static void beforeCalcClass() {
         googleCalculator = new GoogleCalculator(driver);
     }
 
-    @Before
+    @BeforeEach
     public void beforeTest() {
         googleCalculator.goToGoogle();
     }
@@ -26,39 +30,39 @@ public class GoogleCalculatorTest extends BaseTest {
     @Test
     public void googleCalculatorTest() {
         googleCalculator.googleReq(onePlusThreeIs);
-        Assert.assertEquals("4", googleCalculator.getResult());
+        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiOnePlusOneIs();
-        Assert.assertEquals("2", googleCalculator.getResult());
+        assertEquals("2", googleCalculator.getResult());
 
         googleCalculator.googleReq(twoMulTwoIs);
-        Assert.assertEquals("4", googleCalculator.getResult());
+        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiTwoMulFiveIs();
-        Assert.assertEquals("10", googleCalculator.getResult());
+        assertEquals("10", googleCalculator.getResult());
 
         googleCalculator.googleReq(sixMinTwoIs);
-        Assert.assertEquals("4", googleCalculator.getResult());
+        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiTwelveMinTwo();
-        Assert.assertEquals("10", googleCalculator.getResult());
+        assertEquals("10", googleCalculator.getResult());
 
         googleCalculator.googleReq(eightDivTwoIs);
-        Assert.assertEquals("4", googleCalculator.getResult());
+        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiTwentyDivTwo();
-        Assert.assertEquals("10", googleCalculator.getResult());
+        assertEquals("10", googleCalculator.getResult());
 
         googleCalculator.googleReq(twoPowTwo);
-        Assert.assertEquals("4", googleCalculator.getResult());
+        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiFivePowThree();
-        Assert.assertEquals("125", googleCalculator.getResult());
+        assertEquals("125", googleCalculator.getResult());
     }
 
 }
