@@ -22,8 +22,8 @@ public class GoogleCalculator extends BasePage {
         super(driver);
     }
 
-    public String getResult() {
-        return driver.findElement(result).getText();
+    public void checkResult(String a) {
+        driver.findElement(By.xpath("//span[@id = 'cwos' and text() = '" + a + "']")).getText();
     }
 
     public void checkAns(String ansIs) {
@@ -69,7 +69,6 @@ public class GoogleCalculator extends BasePage {
         driver.findElement(threeButton).click();
         driver.findElement(resButton).click();
     }
-
 
 
 }

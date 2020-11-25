@@ -30,39 +30,31 @@ public class GoogleCalculatorTest extends BaseTest {
     @Test
     public void googleCalculatorTest() {
         googleCalculator.googleReq(onePlusThreeIs);
-        assertEquals("4", googleCalculator.getResult());
+        googleCalculator.checkResult("4");
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiOnePlusOneIs();
-        assertEquals("2", googleCalculator.getResult());
+        googleCalculator.checkResult("2");
 
-        googleCalculator.googleReq(twoMulTwoIs);
-        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
-        googleCalculator.checkAns("4");
+        googleCalculator.checkAns("2");
         googleCalculator.guiTwoMulFiveIs();
-        assertEquals("10", googleCalculator.getResult());
+        googleCalculator.checkResult("10");
 
-        googleCalculator.googleReq(sixMinTwoIs);
-        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
-        googleCalculator.checkAns("4");
+        googleCalculator.checkAns("10");
         googleCalculator.guiTwelveMinTwo();
-        assertEquals("10", googleCalculator.getResult());
+        googleCalculator.checkResult("10");
 
-        googleCalculator.googleReq(eightDivTwoIs);
-        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
-        googleCalculator.checkAns("4");
+        googleCalculator.checkAns("10");
         googleCalculator.guiTwentyDivTwo();
-        assertEquals("10", googleCalculator.getResult());
+        googleCalculator.checkResult("10");
 
-        googleCalculator.googleReq(twoPowTwo);
-        assertEquals("4", googleCalculator.getResult());
         googleCalculator.guiClearRes();
-        googleCalculator.checkAns("4");
+        googleCalculator.checkAns("10");
         googleCalculator.guiFivePowThree();
-        assertEquals("125", googleCalculator.getResult());
+        googleCalculator.checkResult("125");
     }
 
 }
