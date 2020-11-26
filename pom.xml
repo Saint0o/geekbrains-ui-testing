@@ -35,9 +35,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <groups>slow</groups>
-                    <excludedGroups>fast</excludedGroups>
-                    <!--                    <skip>true</skip>-->
+                    <includes>
+                        <include>TriangleTest.java</include>
+                    </includes>
                 </configuration>
             </plugin>
 
@@ -172,5 +172,11 @@
             <version>2.6</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.4.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
