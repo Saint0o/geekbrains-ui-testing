@@ -5,15 +5,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GoogleCalculatorTest extends BaseTest {
 
     private final String onePlusThreeIs = "1+3=";
-    private final String twoMulTwoIs = "2*2=";
-    private final String sixMinTwoIs = "6-2=";
-    private final String eightDivTwoIs = "8/2=";
-    private final String twoPowTwo = "2^2=";
+//    private final String twoMulTwoIs = "2*2=";
+//    private final String sixMinTwoIs = "6-2=";
+//    private final String eightDivTwoIs = "8/2=";
+//    private final String twoPowTwo = "2^2=";
 
     private static GoogleCalculator googleCalculator;
 
@@ -34,27 +34,27 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("4");
         googleCalculator.guiOnePlusOneIs();
-        googleCalculator.checkResult("2");
+        assertThat(googleCalculator.getResult()).isEqualTo("2");
 
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("2");
         googleCalculator.guiTwoMulFiveIs();
-        googleCalculator.checkResult("10");
+        assertThat(googleCalculator.getResult()).isEqualTo("10");
 
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("10");
         googleCalculator.guiTwelveMinTwo();
-        googleCalculator.checkResult("10");
+        assertThat(googleCalculator.getResult()).isEqualTo("10");
 
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("10");
         googleCalculator.guiTwentyDivTwo();
-        googleCalculator.checkResult("10");
+        assertThat(googleCalculator.getResult()).isEqualTo("10");
 
         googleCalculator.guiClearRes();
         googleCalculator.checkAns("10");
         googleCalculator.guiFivePowThree();
-        googleCalculator.checkResult("125");
+        assertThat(googleCalculator.getResult()).isEqualTo("125");
     }
 
 }

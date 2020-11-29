@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GoogleWeatherTest extends BaseTest {
 
@@ -30,6 +30,7 @@ public class GoogleWeatherTest extends BaseTest {
         googleWeather.checkWeatherFrame();
         googleWeather.googleReq(weatherInStPetersburg);
         googleWeather.checkWeatherFrame();
+        assertThat(googleWeather.weatherCity()).contains("Санкт-Петербург");
     }
 
 
