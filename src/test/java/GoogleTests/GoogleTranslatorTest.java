@@ -4,6 +4,7 @@ import Pages.GoogleTranslator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,20 +19,26 @@ public class GoogleTranslatorTest extends BaseTest {
     @BeforeAll
     public static void beforeTranslateClass() {
         googleTranslator = new GoogleTranslator(driver);
+
+        logger = LoggerFactory.getLogger(GoogleTranslatorTest.class);
     }
 
     @BeforeEach
     public void beforeTranslateTest() {
         googleTranslator.goToGoogle();
+
+        logger.info("Переход на главную страницу Google.com");
     }
 
     @Test
-    public void helloWorldTest() throws InterruptedException {
+    public void helloWorldTest() {
         googleTranslator.googleReq(translator);
         googleTranslator.chooseFirstFieldLang(GoogleTranslator.Languages.RUSSIAN);
         googleTranslator.chooseSecondFieldLang(GoogleTranslator.Languages.ENGLISH);
         googleTranslator.fillInputField(helloWorld);
         assertThat(googleTranslator.getOutputText()).isEqualTo(helloWorldInEnglish);
+
+        logger.info("Фраза \"Привет мир переведена правильно\". ");
     }
 
 }
