@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,10 +13,12 @@ public class GoogleSearch extends BasePage {
         super(driver);
     }
 
+    @Step("Проверка Имени с карточки гугл")
     public String getNameFromWidget() {
         return driver.findElement(nameInWidget).getText();
     }
 
+    @Step("Проверка Имени с карточки гугл")
     public String getAnswerName() {
         return driver.findElement(answerName).getText();
     }

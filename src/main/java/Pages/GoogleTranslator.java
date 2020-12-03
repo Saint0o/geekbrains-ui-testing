@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public class GoogleTranslator extends BasePage {
         super(driver);
     }
 
+    @Step("Ввести в поле ввода слово \"{word}\"")
     public void fillInputField(String word) {
         WebElement inputFieldElement = driver.findElement(inputField);
 
@@ -32,6 +34,7 @@ public class GoogleTranslator extends BasePage {
         return driver.findElement(activeOutputField).getText();
     }
 
+    @Step("Выбрать в первом поле {language}")
     public void chooseFirstFieldLang(Languages language) {
         WebElement langDropListElement = driver.findElement(firstLangDropList);
         WebElement langInputFieldElement = driver.findElement(firstLangInputField);
@@ -43,13 +46,14 @@ public class GoogleTranslator extends BasePage {
                 .build().perform();
     }
 
-    public void chooseSecondFieldLang(Languages languages) {
+    @Step("Выбрать во втором поле {language}")
+    public void chooseSecondFieldLang(Languages language) {
         WebElement langDropListElement = driver.findElement(secondLangDropList);
         WebElement langInputFieldElement = driver.findElement(SecondLangInputField);
 
         actions.click(langDropListElement)
                 .click(langInputFieldElement)
-                .sendKeys(languages.getLanguage())
+                .sendKeys(language.getLanguage())
                 .sendKeys(Keys.ENTER)
                 .build().perform();
 

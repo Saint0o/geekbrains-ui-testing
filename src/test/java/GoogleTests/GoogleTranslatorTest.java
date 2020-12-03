@@ -37,6 +37,7 @@ public class GoogleTranslatorTest extends BaseTest {
         googleTranslator.chooseSecondFieldLang(GoogleTranslator.Languages.ENGLISH);
         googleTranslator.fillInputField(helloWorld);
         assertThat(googleTranslator.getOutputText()).isEqualTo(helloWorldInEnglish);
+        makeScreenshot(driver);
 
         logger.info("Фраза \"Привет мир переведена правильно\". ");
     }
