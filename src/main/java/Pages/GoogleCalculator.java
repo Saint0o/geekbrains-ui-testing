@@ -1,5 +1,6 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,18 +25,22 @@ public class GoogleCalculator extends BasePage {
         super(driver);
     }
 
+    @Step("Проверить, что ожидаемый результат ({a}) в поле 'результат' соотвествует фактическому")
     public void checkResult(String a) {
         driver.findElement(By.xpath("//span[@id = 'cwos' and text() = '" + a + "']")).getText();
     }
 
+    @Step("Проверить, что ожидаемый результат ({ansIs}) Ans соотвествует фактическому")
     public void checkAns(String ansIs) {
         driver.findElement(By.xpath("//span[text()='Ans = " + ansIs + "']")).getText();
     }
 
+    @Step("Очистить поле ввода с помощью кнопок на GUI")
     public void guiClearRes() {
         driver.findElement(clearButton).click();
     }
 
+    @Step("Ввести 1+1= с помощью GUI")
     public void guiOnePlusOneIs() {
         WebElement oneButtonElement = driver.findElement(oneButton);
         WebElement plusButtonElement = driver.findElement(plusButton);
@@ -49,6 +54,7 @@ public class GoogleCalculator extends BasePage {
                 .build().perform();
     }
 
+    @Step("Ввести 2*5= с помощью GUI")
     public void guiTwoMulFiveIs() {
         WebElement twoButtonElement = driver.findElement(twoButton);
         WebElement mulButtonElement = driver.findElement(mulButton);
@@ -63,6 +69,7 @@ public class GoogleCalculator extends BasePage {
                 .build().perform();
     }
 
+    @Step("Ввести 12+2= с помощью GUI")
     public void guiTwelveMinTwo() {
         WebElement oneButtonElement = driver.findElement(oneButton);
         WebElement twoButtonElement = driver.findElement(twoButton);
@@ -78,6 +85,7 @@ public class GoogleCalculator extends BasePage {
                 .build().perform();
     }
 
+    @Step("Ввести 20/2= с помощью GUI")
     public void guiTwentyDivTwo() {
         WebElement twoButtonElement = driver.findElement(twoButton);
         WebElement zeroButtonElement = driver.findElement(zeroButton);
@@ -93,6 +101,7 @@ public class GoogleCalculator extends BasePage {
                 .build().perform();
     }
 
+    @Step("Ввести 5^3= с помощью GUI")
     public void guiFivePowThree() {
         WebElement fiveButtonElement = driver.findElement(fiveButton);
         WebElement powButtonElement = driver.findElement(powButton);
@@ -107,6 +116,7 @@ public class GoogleCalculator extends BasePage {
                 .build().perform();
     }
 
+    @Step("Проверка результата")
     public String getResult() {
         return driver.findElement(result).getText();
     }

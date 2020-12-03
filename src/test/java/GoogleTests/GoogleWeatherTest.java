@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GoogleWeatherTest extends BaseTest {
 
@@ -36,7 +37,7 @@ public class GoogleWeatherTest extends BaseTest {
         googleWeather.googleReq(weatherInStPetersburg);
         googleWeather.checkWeatherFrame();
         assertThat(googleWeather.weatherCity()).contains("Санкт-Петербург");
-
+        makeScreenshot(driver);
         logger.info("Мороз и солнце, день чудесный!");
     }
 

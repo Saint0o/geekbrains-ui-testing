@@ -40,6 +40,7 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.checkAns("4");
         googleCalculator.guiOnePlusOneIs();
         assertThat(googleCalculator.getResult()).isEqualTo("2");
+        makeScreenshot(driver);
 
         logger.info("1 + 1 = 2");
 
@@ -47,6 +48,7 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.checkAns("2");
         googleCalculator.guiTwoMulFiveIs();
         assertThat(googleCalculator.getResult()).isEqualTo("10");
+        makeScreenshot(driver);
 
         logger.info("2 * 5 = 10");
 
@@ -54,6 +56,7 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.checkAns("10");
         googleCalculator.guiTwelveMinTwo();
         assertThat(googleCalculator.getResult()).isEqualTo("10");
+        makeScreenshot(driver);
 
         logger.info("12 - 2 = 10");
 
@@ -61,6 +64,7 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.checkAns("10");
         googleCalculator.guiTwentyDivTwo();
         assertThat(googleCalculator.getResult()).isEqualTo("10");
+        makeScreenshot(driver);
 
         logger.info("20 + 2 = 10");
 
@@ -68,8 +72,8 @@ public class GoogleCalculatorTest extends BaseTest {
         googleCalculator.checkAns("10");
         googleCalculator.guiFivePowThree();
         assertThat(googleCalculator.getResult()).isEqualTo("125");
+        makeScreenshot(driver);
 
         logger.info("5 pow 3 = 125");
     }
-
 }

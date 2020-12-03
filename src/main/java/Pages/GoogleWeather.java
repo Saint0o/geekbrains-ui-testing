@@ -1,8 +1,8 @@
 package Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class GoogleWeather extends BasePage {
 
@@ -18,6 +18,7 @@ public class GoogleWeather extends BasePage {
         return driver.findElement(weatherCity).getText();
     }
 
+    @Step("Проверить, что карточка погоды отображается")
     public void checkWeatherFrame() {
         driver.findElement(weatherFrame);
     }

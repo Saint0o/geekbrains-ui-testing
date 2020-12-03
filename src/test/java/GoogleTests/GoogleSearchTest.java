@@ -34,6 +34,7 @@ public class GoogleSearchTest extends BaseTest{
     public void searchAlbertEinsteinInformation() {
         googleSearch.googleReq(albertEinstein);
         assertThat(googleSearch.getNameFromWidget()).isEqualTo(albertEinstein);
+        makeScreenshot(driver);
 
         logger.info("Альбер Эйнштейн найден!");
     }
@@ -42,6 +43,7 @@ public class GoogleSearchTest extends BaseTest{
     public void searchNinthUsPresident() {
         googleSearch.googleReq(whoIsNinthUsPresident);
         assertThat(googleSearch.getAnswerName()).isEqualTo(ninthUsPresident);
+        makeScreenshot(driver);
 
         logger.info("Интересный факт - девятый президент Америки - это Генри Гаррисон");
     }
